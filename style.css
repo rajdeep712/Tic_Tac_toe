@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    font-family: "Permanent Marker", serif;
+    font-weight: 400;
+    font-style: normal;
+    width: 100vw;
+    height: 15vh;;
+    background: linear-gradient(blue,white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav h1{
+    font-size: 4vw;
+}
+
+.gamecontainer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    margin-right: 3vw;
+    display: grid;
+    grid-template-columns: repeat(3,10vw);
+    grid-template-rows: repeat(3,10vw);
+    position: relative;
+}
+#line {
+    width: 0vw;
+    height: 0.2vw;
+    background-color: black;
+    transform:translate(0vw,0vw) rotate(0deg);
+    position: absolute;
+    transition: width 1s ease-in-out;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    font-size: 7vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.box:hover {
+    background-color: rgb(220, 207, 231);
+}
+.br-r{
+    border-right: none;
+}
+.br-l{
+    border-left: none;
+}
+.br-t{
+    border-top: none;
+}
+.br-b{
+    border-bottom: none;
+}
+
+.info {
+    font-family: "Merienda", serif;
+    font-optical-sizing: auto;
+    font-weight: 600px;
+    font-style: normal;
+    font-size: 2vw;
+}
+#reset {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#reset button{
+    background-color: rgb(228, 155, 238);
+    height: 2vw;
+    width: 3.5vw;
+    font-size: 1.1vw;
+}
+#turninfo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+#gif{
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+@media screen and (max-width:950px) {
+    .gamecontainer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        margin-bottom: 15vw;
+        transform: scale(1.6);
+    }
+    #reset button{
+        height: 7vw;
+        width: 14vw;
+        font-size: 4.5vw;
+    }
+    .info{
+        font-size: 5vw;
+    }
+    #gif{
+        width: 50vw;
+        position: relative;
+        right: 20px;
+    }
+}
