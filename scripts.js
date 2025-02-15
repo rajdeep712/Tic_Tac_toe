@@ -55,12 +55,17 @@ function play() {
                 document.getElementById('turninfo').innerText = 'Please reset first';
                 return;
             }
-            moveAudio.play();
-            e.target.innerText = currTurn;
-            checkWin();
-            checkDraw();
-            if(!gameOver) {
-                changeTurn();
+            if(e.target.innerText == '') {
+                moveAudio.play();
+                e.target.innerText = currTurn;
+                checkWin();
+                checkDraw();
+                if(!gameOver) {
+                    changeTurn();
+                }
+            }
+            else{
+                alert('Space already filled');
             }
         });
     });
